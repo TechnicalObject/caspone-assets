@@ -1,4 +1,4 @@
-name: Deploy media.casp.one
+name: Deploy img.casp.one
 
 on:
   push:

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build the media.casp.one site into _site/.
+"""Build the img.casp.one site into _site/.
 
 - Copies every asset from the current checkout to the site root
   (stable URLs such as /caspone/logo-light.svg).
@@ -86,7 +86,7 @@ background-image:conic-gradient(var(--chk) 25%,transparent 0 50%,var(--chk) 0 75
 def write_index(folder: Path, tags: list[str]) -> None:
     rel = folder.relative_to(OUT)
     parts = [] if str(rel) == "." else list(rel.parts)
-    crumbs = ['<a href="/">media.casp.one</a>']
+    crumbs = ['<a href="/">img.casp.one</a>']
     for i, p in enumerate(parts):
         crumbs.append(f'<a href="/{"/".join(parts[:i+1])}/">{html.escape(p)}</a>')
     items = []
@@ -114,7 +114,7 @@ def write_index(folder: Path, tags: list[str]) -> None:
     else:
         note = ""
     (folder / "index.html").write_text(PAGE.format(
-        title="/" + "/".join(parts) if parts else "media.casp.one",
+        title="/" + "/".join(parts) if parts else "img.casp.one",
         crumbs=" / ".join(crumbs), note=note, items="".join(items)), encoding="utf-8")
 
 
